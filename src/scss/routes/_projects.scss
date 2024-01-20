@@ -1,0 +1,150 @@
+.projects {
+    background-color: $color-primary;
+    height: 100vh;
+
+    &__section {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        margin: {
+            left: 6.4rem;
+            right: 6.4rem;
+        }
+
+        h1 {
+            font-size: 6rem;
+            color: $color-white;
+        }
+
+        p {
+            color: $color-white;
+        }
+
+        &--box {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 5rem;
+
+            .box {
+                &__info {
+                    position: relative;
+                    z-index: 0;
+                    width: 400px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid $color-white;
+                    border-radius: 12px;
+                    transition-duration: 600ms;
+                    
+                    &--img {
+                        border-radius: 12px;
+                        width: 100%;
+                    }
+                    &--description {
+                        display: none;
+                        justify-content: center;
+                        flex-direction: column;
+                        align-items: center;
+                        position: absolute;
+                        
+                        h2 {
+                            font-size: 3rem;
+                            color: $color-white;
+                        }
+                    }
+
+                    &:hover {
+                        border: 2px solid $color-white;
+                        transform: scale(1.2);
+                        z-index: 3;
+                        transition: transform 600ms ease;
+                        
+                        .box__info--img {
+                            filter: brightness(0.1);
+                        }
+
+                        .box__info--description {
+                            z-index: 3;
+                            display: flex;
+                        }
+                    }
+                }
+            }
+        }
+
+        &--carousel {
+            display: none;
+        }
+    }
+
+    @media ( 1290px <= width <= 1450px ) {
+        &__section {
+            .box {
+                &__info {
+                    width: auto;
+                    &--img {
+                        width: 350px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media ( 1132px <= width <= 1289px ) {
+        &__section {
+            .box {
+                &__info {
+                    width: auto;
+                    &--img {
+                        width: 300px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media ( 920px <= width <= 1132px ) {
+        &__section {
+            .box {
+                &__info {
+                    width: auto;
+                    &--img {
+                        width: 250px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (width <= 920px ) {
+
+        &__section {
+            &--box {
+                display: none;
+            }
+
+            .carouselBox {
+                display: block;
+                .control-dots {
+                    display: none;
+                }
+                &__container {
+                    width: 100%;
+                    &--linked {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+              
+        }
+    }
+}

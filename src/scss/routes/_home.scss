@@ -1,0 +1,114 @@
+.home {
+    background-color: $color-primary;
+    height: 100vh;
+    
+    &__section {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: {
+            left: 6.4rem;
+            right: 6.4rem;
+        }
+
+        &--info{
+            width: 40%;
+            
+            h1 {
+                color: $color-white;
+                font-size: 6rem;
+            }
+
+            p {
+                color: $color-white;
+                line-height: 2.2rem;
+
+                strong {
+                    color: $color-quaternary;
+                }
+            }
+        }
+
+        &--image {
+            width: 50%;
+
+            img {
+                width: 80%;
+            }
+        }
+    }
+
+    @media (721px <= width <= 1250px ) {
+
+        &__section {
+
+            &--info {
+                width: 50%;
+            }
+        }
+    }
+    
+    @media (width <= 720px) {
+
+        &__section {
+            margin: {
+                left: 1.4rem;
+                right: 1.4rem;
+            }
+
+            &--info {
+                width: 60%;
+
+                h1 {
+                    font-size: 4rem;
+                }
+
+                p {
+                    font-size: 1.6rem;
+                }
+            }
+
+            &--image {
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                width: 40%;
+            }
+        }
+    }
+
+    @media (width <= 599px) {
+
+        &__section {
+            flex-direction: column;
+            justify-content: center;
+            gap: 2rem;
+
+            &--info {
+                width: 100%;
+            }
+
+            &--image {
+                width: 50%;
+            }
+        }
+    }
+
+    @media (width <= 450px) {
+
+        &__section {
+            gap: 2rem;
+
+            &--image {
+                width: 60%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                 img {
+                    width: 50%;
+                 }
+            }
+        }
+    }
+}

@@ -1,0 +1,140 @@
+.header {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    top: 0;
+  
+    &__nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 0;
+      margin: {
+        left: 6.4rem;
+        right: 6.4rem;
+      };
+  
+      &--image {
+        img {
+          width: 5vh;
+        }
+      }
+  
+      .active,
+      .menu {
+        display: none;
+      }
+  
+      .listDesktop {
+        display: flex;
+        align-items: center;
+        gap: 3.2rem;
+  
+        &__item {
+          list-style-type: none;
+  
+          a {
+            color: $color-white;
+            text-decoration: none;
+            font-weight: 100;
+            transition-duration: 600ms;
+  
+            &:hover {
+              border-bottom: 1px solid $color-quaternary;
+              transition: border-bottom 600ms ease;
+            }
+          }
+  
+          .is-active {
+            font-weight: bold;
+            color: $color-quaternary;
+            pointer-events: none;
+            transition: color 600ms ease;
+          }
+        }
+      }
+    }
+  
+    @media (max-width: 720px) {
+      &__nav {
+        position: relative;
+        margin: {
+          left: 1.4rem;
+          right: 1.4rem;
+        };
+  
+        .listDesktop {
+          display: none;
+        }
+  
+        .menu {
+          display: block;
+          &:hover {
+            color: $color-quaternary;
+          }
+          color: $color-white;
+          cursor: pointer;
+          font-size: 3.5rem;
+          z-index: 6;
+          transition-duration: 600ms;
+        }
+  
+        .listMobile {
+          z-index: 5;
+          background-color: $color-primary;
+          position: absolute;
+          top: 0;
+          left: -1.4rem;
+          width: 100vw;
+          height: 100vh;
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          transition: opacity 600ms ease;
+          opacity: 1;
+  
+          &__item {
+            list-style-type: none;
+            height: 100%;
+            width: 100%;
+            transition-duration: 600ms;
+            font-size: 2.5rem;
+  
+            a {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: inherit;
+              width: inherit;
+              color: $color-white;
+              text-decoration: none;
+              font-weight: 100;
+              transition-duration: 600ms;
+            }
+  
+            &:hover {
+              background-color: $color-white;
+              transition: background-color 600ms ease;
+  
+              a {
+                color: $color-black;
+              }
+            }
+  
+            .is-active {
+              font-weight: bold;
+              color: $color-quaternary;
+              pointer-events: none;
+              transition: color 600ms ease;
+            }
+          }
+        }
+  
+        .listMobile:not(.active) {
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+  
