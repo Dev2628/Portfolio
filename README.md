@@ -2,7 +2,7 @@
 
 ¡Hola! 👋 Este es mi portafolio personal para mostrar mis habilidades como desarrollador frontend
 
-> [!NOTA]
+> [!NOTE]
 > Esta es la Primera version de mi Portfolio
 
 ## Tecnologías Utilizadas 🛠️
